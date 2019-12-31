@@ -1,12 +1,15 @@
 const h1 = document.getElementById('h1');
-document.querySelector('#changeBtn').addEventListener('click', function () {
+const changeBtn = document.getElementById('changeBtn');
+
+changeBtn.addEventListener('click', function (e) {
   // randomQuote();
   fetch('https://api.quotable.io/random')
     .then(response => response.json())
     .then(data => {
       animate(h1, 'flipInY');
       h1.innerText = data.content;
-    })
+    });
+  e.preventDefault();
 });
 
 // async function randomQuote() {
