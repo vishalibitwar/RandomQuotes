@@ -5,10 +5,10 @@ changeBtn.addEventListener('click', function (e) {
   fetch('https://api.quotable.io/random')
     .then(response => response.json())
     .then(data => {
-      // animate(h1, 'flipInY');
+      animate(h1, 'flipInY');
       h1.innerText = data.content;
     });
-      e.preventDefault();
+  e.preventDefault();
 });
 
 function animate(element, animation) {
