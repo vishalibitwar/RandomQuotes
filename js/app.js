@@ -11,7 +11,8 @@ function showQuote() {
     .then(data => {
       animate(h1, 'flipInY');
       h1.innerText = data.content;
-    });
+    })
+    .catch(error => console.log(error));
 }
 
 
